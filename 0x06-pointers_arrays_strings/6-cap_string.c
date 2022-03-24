@@ -1,29 +1,42 @@
 #include "main.h
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-
-void make_upper(char *s);
-
-int main()
+/**
+ * cap_string - capitalizes all words of a string
+ * @n: input value
+ *
+ *
+ * Return: string
+ */
+char *cap_string(char *n)
 {
-  // test out the function
-  char s[] = "Some String With LOTS OF Capitals";
-  make_upper(s);
-  printf("%s\n", s);
+	int i;
 
-  return 0;
-}
-
-// makes all letters of the string s lower case
-void make_upper(char *s)
-{
-  // get the length of the string
-  int length = strlen(s);
-
-  // convert each letter in the string to lowercase... tolower() will always
-  // return the lowercase version of a letter if it is passed an uppercase
-  // letter, otherwise it will just return the original character it was passed
-  for (int i = 0; i < length; i++)
-    s[i] = toupper(s[i]);
+	i = 0;
+	if (n[0] >= 'a' && n[0] <= 'z')
+	{
+		n[0] = n[0] - 32;
+	}
+	for (i = 0; n[i] != '\0'; i++)
+	{
+		switch (n[i])
+		{
+			case ',':
+			case ';':
+			case '.':
+			case '!':
+			case '?':
+			case '"':
+			case '(':
+			case ')':
+			case '{':
+			case '}':
+			case ' ':
+			case '\n':
+			case '\t':
+				if (n[i + 1] > 96 && n[i + 1] < 123)
+				{
+					n[i + 1] = n[i + 1] - 32;
+				}
+		}
+	}
+	return (n);
 }
