@@ -3,18 +3,18 @@
 
 /*
  * Desc: Header file containing prototypes and definitions for all functions
- *       in the 0x12-more_singly_linked_lists.
+ *       in 0x12-more_singly_linked_lists.
  */
 
 #include <stdlib.h>
 
 /**
  * struct listint_s: Singly linked list
- * @n: Integer
+ * @n: integer
  * @next: Points to the next node
  *
- * Description: Singly linked list node 
- * 
+ * Description: singly linked list node structure
+ * for Holberton project
  */
 typedef struct listint_s
 {
